@@ -1,0 +1,23 @@
+<odoo>
+
+    <record id="product_normal_form_view_1" model="ir.ui.view">
+        <field name="name">product.template.product.eb.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <page name="inventory" position="inside">
+                <group>
+                    <group>
+                        <separator string="Lagerort"/>
+                        <field name="loc_rack"/>
+                        <field name="loc_row"/>
+                    </group>
+                </group>
+            </page>
+
+        </field>
+
+    </record>
+
+
+</odoo>

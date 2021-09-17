@@ -1,0 +1,202 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* vitanatura_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-06 14:24+0000\n"
+"PO-Revision-Date: 2020-01-06 14:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.external_layout_background
+msgid "<span style=\"font-weight:bold;\">REWE Markt GmbH</span>\n"
+"                                    <br/>\n"
+"                                    Domstr. 20\n"
+"                                    <br/>\n"
+"                                    50668 Köln"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<span>\n"
+"                                To:\n"
+"                            </span>"
+msgstr "<span>\n"
+"                            An:\n"
+"                        </span>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Carrier</strong>"
+msgstr "<strong>Frachtführer</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_invoice_document_inherit
+msgid "<span>Amount</span>"
+msgstr "<span>Betrag</span>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_invoice_document_inherit
+msgid "<span>In addition</span>"
+msgstr "<span>Zuzüglich</span>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_invoice_document_inherit
+msgid "<span>Inclusive</span>"
+msgstr "<span>Enthaltene</span>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_invoice_document_inherit
+msgid "<span>Total Price</span>"
+msgstr "<span>Gesamtpreis</span>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Customer Address:</strong>"
+msgstr "<strong>Kundenadresse:</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Date</strong>"
+msgstr "<strong>Datum</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Order (Origin)</strong>"
+msgstr "<strong>Bestellung (Original)</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Ordered Quantity</strong>"
+msgstr "<strong>Bestellte Menge</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Product</strong>"
+msgstr "<strong>Produkt</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Menge</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Tracking Number</strong>"
+msgstr "<strong>Verfolgungsnummer</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "<strong>Weight</strong>"
+msgstr "<strong>Gewicht</strong>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "All items couldn't be shipped, the remaining ones will be shipped as soon as they become\n"
+"                        available."
+msgstr "Alle Artikel konnten nicht versendet werden, die restlichen werden versendet, sobald sie verfügbar sind."
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "Anbei erhalten Sie eine detaillierte Aufstellung dieser Lieferung:"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.external_layout_background
+msgid "DZ Bank\n"
+"                                    <br/>\n"
+"                                    IBAN: DE94500604000000141517\n"
+"                                    <br/>\n"
+"                                    Swift/BIC: GENODEFFXXX"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "From"
+msgstr "Von"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.external_layout_background
+msgid "Geschäftsführer:\n"
+"                                    <br/>\n"
+"                                    Dr. D. Büchel, H. Hübers, P. Maly,\n"
+"                                    <br/>\n"
+"                                    T. Schischmanow"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "Lot/Serial Number"
+msgstr "Los-/Seriennummer"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.external_layout_background
+msgid "Page:\n"
+"                            <span class=\"page\"/>\n"
+"                            of\n"
+"                            <span class=\"topage\"/>"
+msgstr "Seite:\n"
+"                            <span class=\"page\"/>\n"
+"                            of\n"
+"                            <span class=\"topage\"/>"
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.external_layout_background
+msgid "REWE Markt GmbH\n"
+"                        ,\n"
+"                        Domstr. 20\n"
+"                        ,\n"
+"                        50668 Köln"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "Regal/Zeile"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.external_layout_background
+msgid "Registergericht: Amtsgericht Köln\n"
+"                                    <br/>\n"
+"                                    HRB 66773\n"
+"                                    <br/>\n"
+"                                    Ust.-Id.-Nr.: DE812706034"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "Sollten Sie Fragen zu dieser Lieferung oder zu Ihrer Bestellung haben, erreichen Sie unseren\n"
+"                    Kundenservice von\n"
+"                    Mo - Sa von 07:00 - 23:00 Uhr (außer an Feiertagen) unter der Telefonnummer <strong>+49 (0)221 -\n"
+"                    17739\n"
+"                    777\n"
+"                </strong> oder jederzeit\n"
+"                    per Mail an paketservice@rewe.de.\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <span style=\"font-weight:bold;\">Die Rechnung zu dieser Lieferung erhalten Sie separat per E-Mail.\n"
+"                    </span>"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "This shipment is a backorder of"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.report_delivery_document
+msgid "Vielen Dank für Ihren Einkauf beim REWE Paketservice"
+msgstr ""
+
+#. module: vitanatura_reports
+#: model_terms:ir.ui.view,arch_db:vitanatura_reports.external_layout_background
+msgid "www.rewe.de"
+msgstr ""

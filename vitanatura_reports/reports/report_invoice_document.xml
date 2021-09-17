@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+            <!-- Customer Reference on -->
+            <xpath expr="//h2" position="before">
+                <strong style="margin-left:15mm;">Kundennummer:</strong><p style="margin-left:15mm;" t-field="o.partner_id.id"/>
+            </xpath>
+
+            <!-- Dicide if the report is Netto or Brutto -->
+            <xpath expr="//t[@t-set='o']" position="after">
+                <t t-set="inclusive" t-value="o.fiscal_position_id is not None and o.fiscal_position_id.name not in ('Kunde DE Netto', 'Kunde EU (ohne USt-ID)')"/>
+            </xpath>    
+            <!-- Add text in the tax list based on netto / brutto -->
+            <xpath expr="//span[@t-esc='amount_by_group[0]']" position="before">
+                <t t-if="inclusive">
+                    <span>Inclusive</span>
+                </t>
+                <t t-else="">
+                    <span>In addition</span>
+                </t>
+            </xpath>
+            
+            <!--  Add text in the tax list if multiple taxes are used based on netto / brutto -->
+            <xpath expr="//t[@t-else='']//span[@t-esc='amount_by_group[0]']" position="before">
+                <t t-if="inclusive">
+                    <span>Inclusive</span>
+                </t>
+                <t t-else="">
+                    <span>In addition</span>
+                </t>
+            </xpath>
+
+            <!-- Change column header in the tax list based on netto / brutto -->
+            <xpath expr="//table[@name='invoice_line_table']/thead//span[@groups='account.group_show_line_subtotals_tax_excluded']/.." position="replace">
+                <th class="text-right">
+                  <t t-if="inclusive">
+                      <span>Total Price</span>
+                  </t>
+                  <t t-else="">
+                      <span>Amount</span>
+                  </t>
+                </th>
+            </xpath>
+
+            <!--Change subtotal calculation based on netto / brutto-->
+            <xpath expr="//t[@t-foreach='o.invoice_line_ids']/t[@t-value='current_subtotal + line.price_subtotal']" position="replace"/>
+            <xpath expr="//t[@t-foreach='o.invoice_line_ids']/t[@t-value='current_subtotal + line.price_total']" position="replace">
+                <t t-if="inclusive">
+                      <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"/>
+                  </t>
+                  <t t-else="">
+                      <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"/>
+                  </t>
+            </xpath>
+
+            <!--Change fields based on netto / brutto-->
+            <xpath expr="//t[@t-foreach='o.invoice_line_ids']//td[@class='text-right o_price_total']" position="replace">
+                <td class="text-right o_price_total">
+                    <t t-if="inclusive">
+                        <span t-field="line.price_total"/>
+                    </t>
+                    <t t-else="">
+                        <span t-field="line.price_subtotal"/>
+                    </t>
+                </td>
+            </xpath>
+
+            <!--Change fields based on netto / brutto-->
+            <xpath expr="//span[@t-field='line.price_unit']" position="replace">
+                <t t-if="inclusive">
+                    <span t-field="line.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </t>
+                <t t-else="">
+                    <t t-set="unit_price_exclusive" t-value="line.price_subtotal / line.quantity"/>
+                    <span t-esc="unit_price_exclusive" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+
+                </t>
+            </xpath>
+            
+        </template>
+
+    </data>
+</odoo>

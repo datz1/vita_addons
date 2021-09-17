@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template id="template">
+
+    <t t-extend="stock_barcode_lines_template">
+
+        <!-- Add  Regal/Zeile  on scanner picking view  -->
+
+        <t t-jquery="span.o_line_lot_id:first" t-operation="after">
+            <span><t t-esc="line.product_id.loc_rack"></t></span>/
+            <span> <t t-esc="line.product_id.loc_row"></t></span>
+        </t>
+
+    </t>
+
+</template>

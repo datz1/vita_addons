@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_sale_inherit"  inherit_id="website_sale.product_price" >
+        <xpath expr="//span[@itemprop='price']" position="after">
+              <div>
+			  		<p> </p>
+					<t t-if="product.base_price">
+						<p style="font-size: 45%;">(
+						<span t-field="product.base_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>/
+						<span t-field="product.base_qty"/>
+						<span t-field="product.baseprice_uom_id"/>
+						)</p>
+					</t>
+			 </div>
+        </xpath>
+    </template>
+    <template inherit_id="website_sale.address" id="website_sale_inherited">
+    	<xpath expr='//div[@t-attf-class="form-group #{error.get(&apos;street&apos;) and &apos;o_has_error&apos; or &apos;&apos;} col-lg-12 div_street"]' position="replace">
+    			<div t-attf-class="form-group #{error.get('street') and 'o_has_error' or ''} col-lg-6 div_street">
+                	<label class="col-form-label" for="street">Street</label>
+                	<input type="text" name="street" t-attf-class="form-control #{error.get('street') and 'is-invalid' or ''}" t-att-value="'street' in checkout and checkout['street']" />
+                </div>
+                <div t-attf-class="form-group #{error.get('street_number') and 'o_has_error' or ''} col-lg-6 div_street_number">
+                	<label class="col-form-label" for="street_number">Number</label>
+                	<input type="text" name="street_number" t-attf-class="form-control #{error.get('street_number') and 'is-invalid' or ''}" t-att-value="'street_number' in checkout and checkout['street_number']" />
+                </div>
+    	</xpath>
+    </template>
+    
+
+</odoo>

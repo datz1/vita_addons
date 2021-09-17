@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" name="assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/hucke_print_delivery_slip_and_invoice/static/src/js/form_controller.js"></script>
+            </xpath>
+        </template>
+
+        <record id="view_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='do_print_picking']" position="before">
+                    <field name="sale_id" invisible="True"/>
+                    <button name="button_invoice_and_print" string="Rechnung erstellen &amp; drucken" type="object" barcode_trigger="invoice_and_print" attrs="{'invisible': ['|', '|', '|', ('state', '!=', 'done'), ('is_locked', '=', False), ('sale_id', '=', False), ('picking_type_code', '!=', 'outgoing')]}" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="external_layout_background" inherit_id="web.external_layout_background">
+        <xpath expr="//div[@class='header']" position="replace">
+          <div class="header">
+            <div class="o_background_header" style="border-bottom-style: none;">
+                <div t-if="doc_model =='stock.picking' and o.sale_id.pricelist_id.id== 86">
+                    <img src="/vitanatura_reports/static/src/img/rewe_logo.png"/>
+                    <div style="font-weight:bold;color:#d2232a;font-size:14pt;">
+                        REWE Markt GmbH
+                        ,
+                        Domstr. 20
+                        ,
+                        50668 Köln
+                    </div>
+                </div>
+                <div t-else="1">
+                    <div class="pull-right">
+                        <h3 class="mt0 text-right" t-field="company.report_header"/>
+                    </div>
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+                         class="pull-left"/>
+                    <div class="pull-left company_address">
+                        <div>
+                            <strong t-field="company.partner_id.name"/>
+                        </div>
+                        <span t-field="company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;], &quot;no_marker&quot;: true}"/>
+                    </div>
+                    <div class="clearfix mb8"/>
+                </div>
+            </div>
+          </div>
+        </xpath>
+
+        <xpath expr="//div[@class='footer o_background_footer']" position="replace">
+            <div class="footer o_background_footer">
+                <div t-if="doc_model == 'stock.picking' and o.sale_id.pricelist_id.id== 86"
+                     style="font-size:10pt;font-family:Cambria;">
+                    <div class="row first-page">
+                        <table class="table">
+                            <tr>
+
+
+                                <td style="border-top-style: none;">
+                                    <span style="font-weight:bold;">REWE Markt GmbH</span>
+                                    <br/>
+                                    Domstr. 20
+                                    <br/>
+                                    50668 Köln
+                                </td>
+                                <td style="border-top-style: none;">
+                                    Registergericht: Amtsgericht Köln
+                                    <br/>
+                                    HRB 66773
+                                    <br/>
+                                    Ust.-Id.-Nr.: DE812706034
+                                </td>
+                                <td style="border-top-style: none;">
+                                    Geschäftsführer:
+                                    <br/>
+                                    Dr. D. Büchel, H. Hübers, P. Maly,
+                                    <br/>
+                                    T. Schischmanow
+                                </td>
+                                <td style="border-top-style: none;">
+                                    DZ Bank
+                                    <br/>
+                                    IBAN: DE94500604000000141517
+                                    <br/>
+                                    Swift/BIC: GENODEFFXXX
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="pull-right" style="font-size:10pt;color:#d2232a;">
+                        www.rewe.de
+                    </div>
+                </div>
+                <div t-else="1">
+                    <div class="text-center">
+                        <ul class="list-inline">
+                          <li t-if="company.phone" class="list-inline-item"><i class="fa fa-phone" role="img" aria-label="Phone" title="Phone"/> <span t-field="company.phone"/></li>
+                          <li t-if="company.email" class="list-inline-item"><i class="fa fa-at" role="img" aria-label="Email" title="Email"/> <span t-field="company.email"/></li>
+                          <li t-if="company.website" class="list-inline-item"><i class="fa fa-globe" role="img" aria-label="Website" title="Website"/> <span t-field="company.website"/></li>
+                          <li t-if="company.vat" class="list-inline-item"><i class="fa fa-building-o" role="img" aria-label="Fiscal number"/><t t-esc="(company.country_id.vat_label or 'Tax ID').replace(' ','\N{NO-BREAK SPACE}')"/>: <span t-esc="company.vat.replace(' ','\N{NO-BREAK SPACE}')"/></li>
+                        </ul>
+                        <div t-field="company.report_footer"/>
+                        <div class="text-muted">
+                            Page:
+                            <span class="page"/>
+                            of
+                            <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="address_layout" inherit_id="web.address_layout">
+        <xpath expr="//div[@class='address row']" position="replace">
+                <div class="address row" style="margin-right:100mm; margin-left:-145mm; margin-bottom:20px;">
+                    <t t-if="information_block">
+                    <br/>
+                    <br/>
+                        <t t-set="colclass" t-value="'col-5 offset-1'"/>
+                        <div name="information_block" class="col-6">
+                            <t t-raw="information_block"/>
+                        </div>
+                    </t>
+                    <div name="address" t-att-class="colclass">
+                    <br/>
+                    <br/>
+                        <t t-raw="address"/>
+                    </div>
+                </div>
+        </xpath>
+    </template>
+</odoo>
