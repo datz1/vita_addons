@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_delivery_dhl_package_type,delivery.dhl.package.type,model_delivery_dhl_package_type,sales_team.group_sale_salesman,1,0,0,0
+access_delivery_dhl_package_type_manager,delivery.dhl.package.type manager,model_delivery_dhl_package_type,sales_team.group_sale_manager,1,1,1,1
+access_delivery_dhl_package_type_user,delivery.dhl.package.type user,model_delivery_dhl_package_type,base.group_user,1,0,0,0
+access_delivery_dhl_package_type_stock_user,delivery.dhl.package.type stock user,model_delivery_dhl_package_type,stock.group_stock_user,1,1,1,0
+access_delivery_dhl_package_type_stock_manager,delivery.dhl.package.type stock manager,model_delivery_dhl_package_type,stock.group_stock_manager,1,1,1,1

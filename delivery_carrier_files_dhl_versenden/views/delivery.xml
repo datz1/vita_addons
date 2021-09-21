@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="delivery_carrier_carrier_view_dhl" model="ir.ui.view">
+            <field name="model">delivery.carrier.file</field>
+            <field name="inherit_id" ref="base_delivery_carrier_files.view_delivery_carrier_file_form"/>
+            <field name="arch" type="xml">
+                <field name="group_pickings" position="after">
+                    <field name="billing_number" attrs="{'invisible':[('type','!=','dhl_versenden')]}"/>
+                    <field name="dhl_package_type" attrs="{'invisible':[('type','!=','dhl_versenden')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
